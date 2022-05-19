@@ -2,11 +2,17 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmailSubmitted(true);
+  }
 
   return (
     <div className={styles.container}>
@@ -15,106 +21,111 @@ const Home: NextPage = () => {
         <meta name="description" content="Offset your travel carbon emissions." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='w-3/5 m-auto'>
-        <header className='flex flex-row justify-between'>
-          <div className='bg-black text-white underline py-[.25rem] px-[2rem]'>
+      <div className='max-w-screen-lg m-auto'>
+        <header className='flex flex-row justify-between mx-[5vw] lg:m-0'>
+          <div className='bg-black text-white underline py-[.5rem] px-[2.5rem] text-xl'>
             <p>
               Neutral
             </p>
           </div>
           <div className='flex flex-row justify-between'>
             <Link href='https://github.com/naterush/neutral'>
-              <p className='hover:underline'>
+              <p className='hover:underline py-[.5rem] text-xl'>
                 Github
               </p>
             </Link>
           </div>
         </header>
 
-        <main className='flex flex-col align-center justify-center'>
+        <main className='flex flex-col align-middle justify-center mx-[5vw] lg:m-0'>
 
-          <div className='w-full flex flex-row justify-between pt-[15vh]'>
+          <div className='w-full flex flex-row justify-center text-center md:text-left md:justify-between pt-[20vh]'>
             <div className='flex flex-col align-start'>
-              <div className='text-4xl'>
+              <div className='text-4xl md:text-5xl lg:text-7xl'>
                 See the world.  Don't destroy it.
               </div>
-              <div className='text-xl'>
+              <div className='text-2xl lg:text-2xl mt-[2vh]'>
                 Offset your carbon footprint when you travel, automatically.
               </div>
             </div>
-            <div>
-              <Image src="/Icon.svg" alt="A Globe" layout='fixed' height={100} width={100}/>
+            <div className='hidden md:flex'>
+              <Image src="/Icon.svg" alt="A Globe" layout='fixed' height={200} width={200}/>
             </div>
           </div>
 
-
           <form 
-            className='w-full justify-start'
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log("Email!", email);
-            }}
+            className='flex flex-row flex-wrap w-full justify-center md:justify-start gap-4 mt-[2vh] md:mt-0'
+            onSubmit={onSubmit}
           >
             <input 
-              className={styles.cta_inputs + " h-[3rem] pl-2 mr-5"}
+              className={styles.cta_inputs + " h-16 pl-2 text-xl"}
               value={email} 
               onChange={(e) => {setEmail(e.target.value)}} 
               placeholder='email@gmail.com'
               tabIndex={0}
             />
             <button 
-              className={styles.cta_inputs + " bg-black text-white h-[3rem] px-2"}
+              className={styles.cta_inputs + " bg-black text-white h-16 px-2 text-xl"}
               type='submit'
               tabIndex={0}
             >
               Get Notified on Launch
             </button>
           </form>
+          {emailSubmitted && 
+            <div>
+              <p className='text-l'>
+                You will be notified on launch. Thanks for signing up to be Neutral!
+              </p>
+            </div>
+          }
 
 
-          <div className='flex flex-row flex-wrap justify-between mt-10'>
-            <div className={styles.card_container}>
-              <div className={styles.card_header}>
-                What you do
+          <div className='flex flex-row flex-wrap justify-between align-middle pt-[10vh] gap-2'>
+            <div className='m-auto border-[3px] rounded border-black bg-white w-[400px]'>
+              <div className='bg-white border-b-[3px] border-black h-10  py-7 pl-10 flex flex-col justify-center bg-pink-400'>
+                <p className='text-xl'>
+                  What you do
+                </p>
               </div>
-              <div className={styles.card_contents}>
-                <div>
-                  <div>
-                    {}
+              <div className='flex flex-col py-7 pl-10'>
+                <div className='flex flex-row'>
+                  <div className='pt-1'>
+                    <Image src="/Telegram.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
                   </div>
-                  <div>
+                  <div className='pl-3 text-xl'>
                     Travel the world
                   </div>
                 </div>
-                <div>
-                  <div>
-                    {}
+                <div className='flex flex-row pt-5'>
+                  <div className='pt-1'>
+                    <Image src="/Gmail.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
                   </div>
-                  <div>
+                  <div className='pl-3 text-xl'>
                     Forward `go@neutral.fund` email receipts
                   </div>
                 </div>
               </div>
             </div>
-            <div className={styles.card_container}>
-              <div className={styles.card_header}>
+            <div className='m-auto border-[3px] rounded border-black bg-white w-[400px]'>
+              <div className='bg-white border-b-[3px] border-black h-10 py-7 pl-10 flex flex-col justify-center bg-purple-400 text-xl'>
                 What we do
               </div>
-              <div className={styles.card_contents}>
-                <div>
-                  <div>
-                    {}
+              <div className='flex flex-col py-7 pl-10'>
+                <div className='flex flex-row'>
+                  <div className='pt-1'>
+                    <Image src="/Current-location.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
                   </div>
-                  <div>
-                    Calculate your emissions from your receipts
+                  <div className='pl-3 text-xl'>
+                    Calculate your emissions from receipts
                   </div>
                 </div>
-                <div>
-                  <div>
-                    {}
+                <div className='flex flex-row pt-5'>
+                  <div className='pt-1'>
+                    <Image src="/Cloud-check.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
                   </div>
-                  <div>
-                    Charge you monthly for your emissions
+                  <div className='pl-3 text-xl'>
+                    Charge you monthly to offset them
                   </div>
                 </div>
               </div>
