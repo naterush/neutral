@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           <div className='w-full flex flex-row justify-center text-center md:text-left md:justify-between pt-[20vh]'>
             <div className='flex flex-col align-start'>
               <div className='text-4xl md:text-5xl lg:text-7xl'>
-                See the world.  Don't destroy it.
+                See the world.  Don&apos;t destroy it.
               </div>
               <div className='text-2xl lg:text-2xl mt-[2vh]'>
                 Offset your carbon footprint when you travel, automatically.

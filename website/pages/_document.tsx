@@ -5,7 +5,7 @@ export default function Document(): JSX.Element {
   return (
     <Html>
       <Head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue&display=optional"/>
       </Head>
       <body>
         <Main />
