@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className='hidden md:flex'>
-              <Image src="/Icon.svg" alt="A Globe" layout='fixed' height={200} width={200}/>
+              <Image src="/Icon.svg" alt="The World" layout='fixed' height={200} width={200}/>
             </div>
           </div>
 
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
               <div className='flex flex-col py-7 pl-10'>
                 <div className='flex flex-row'>
                   <div className='pt-1'>
-                    <Image src="/Telegram.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
+                    <Image src="/Telegram.svg" alt="Travel" layout='fixed' height={20} width={20}/>
                   </div>
                   <div className='pl-3 text-xl'>
                     Travel the world
@@ -99,7 +99,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className='flex flex-row pt-5'>
                   <div className='pt-1'>
-                    <Image src="/Gmail.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
+                    <Image src="/Gmail.svg" alt="Email" layout='fixed' height={20} width={20}/>
                   </div>
                   <div className='pl-3 text-xl'>
                     Forward `go@neutral.fund` email receipts
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
               <div className='flex flex-col py-7 pl-10'>
                 <div className='flex flex-row'>
                   <div className='pt-1'>
-                    <Image src="/Current-location.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
+                    <Image src="/Current-location.svg" alt="Calculate" layout='fixed' height={20} width={20}/>
                   </div>
                   <div className='pl-3 text-xl'>
                     Calculate your emissions from receipts
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
                 </div>
                 <div className='flex flex-row pt-5'>
                   <div className='pt-1'>
-                    <Image src="/Cloud-check.svg" alt="A Globe" layout='fixed' height={20} width={20}/>
+                    <Image src="/Cloud-check.svg" alt="Charge" layout='fixed' height={20} width={20}/>
                   </div>
                   <div className='pl-3 text-xl'>
                     Charge you monthly to offset them
